@@ -1,0 +1,13 @@
+file_format: "1"
+id: thumbs44
+name: thumbs44
+type: shield
+features:
+  - keys
+  - studio
+outputs:
+  - usb
+  - ble
+siblings:
+  - thumbs44_left
+  - thumbs44_right

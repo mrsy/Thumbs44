@@ -1,0 +1,4 @@
+config SHIELD_THUMBS44_LEFT
+    def_bool $(shields_list_contains,thumbs44_left)
+config SHIELD_THUMBS44_RIGHT
+    def_bool $(shields_list_contains,thumbs44_right)

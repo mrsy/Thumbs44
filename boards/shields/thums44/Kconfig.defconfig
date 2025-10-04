@@ -1,0 +1,14 @@
+
+if SHIELD_THUMBS44_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "thumbs44"
+
+endif
+
+if SHIELD_THUMBS44_LEFT || SHIELD_THUMBS44_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
