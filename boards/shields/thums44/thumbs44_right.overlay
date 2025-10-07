@@ -1,4 +1,7 @@
 
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 3000  // default: 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 50    // default: 10
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -47,13 +50,14 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>
+            ,<&zip_xy_scaler 2 1>
 		    ,<&zip_temp_layer 1 200>;
         
         // スクロール
         // @see https://note.com/lvlltsuya/n/nc8d8fc9b81c3
         scroller {
             layers = <3>;
-            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_scroll_scaler 1 128>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_scroll_scaler 2 128>;
             process-next;
         };
     };
